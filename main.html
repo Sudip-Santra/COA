@@ -1722,8 +1722,8 @@
            FOOTER
            ============================================ */
         .footer {
-            background: var(--charcoal);
-            border-top: 1px solid rgba(255,255,255,0.05);
+            background: var(--cream);
+            border-top: 1px solid var(--border-light);
             padding: var(--space-64);
         }
 
@@ -1742,10 +1742,8 @@
         }
 
         .footer-logo {
-            font-family: var(--font-display);
-            font-size: 24px;
-            color: var(--cream);
-            letter-spacing: 0.2em;
+            height: 100px;
+            width: auto;
         }
 
         .footer-tagline {
@@ -1763,17 +1761,19 @@
             font-size: 12px;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: rgba(250, 247, 244, 0.5);
-            transition: color var(--duration-fast);
+            color: var(--terracotta);
+            opacity: 0.7;
+            transition: opacity var(--duration-fast);
         }
 
         .footer-link:hover {
-            color: var(--cream);
+            opacity: 1;
         }
 
         .footer-copyright {
             font-size: 12px;
-            color: rgba(250, 247, 244, 0.3);
+            color: var(--terracotta);
+            opacity: 0.5;
         }
 
         /* ============================================
@@ -2543,7 +2543,7 @@
     <footer class="footer">
         <div class="footer-inner">
             <div class="footer-brand">
-                <p class="footer-logo">COA</p>
+                <img src="COA LOGO.png" alt="COA Wellness Lounge" class="footer-logo">
                 <p class="footer-tagline">Wellness Lounge & Biohacking Clinic</p>
             </div>
             <div class="footer-links">
