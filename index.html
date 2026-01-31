@@ -121,26 +121,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: all var(--duration-normal) var(--ease-out);
+            transform: translateZ(0);
+            will-change: auto;
         }
 
         .nav::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(250, 247, 244, 0.9);
+            background: rgba(250, 247, 244, 0.95);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            opacity: 0;
-            transition: opacity var(--duration-normal) var(--ease-out);
-        }
-
-        .nav.scrolled::before {
-            opacity: 1;
-        }
-
-        .nav.scrolled {
-            padding: var(--space-16) var(--space-64);
             box-shadow: 0 1px 0 var(--border-light);
         }
 
@@ -342,11 +333,14 @@
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            gap: var(--space-20);
+            gap: var(--space-32);
             margin-top: var(--space-80);
             opacity: 0;
             transform: translateY(40px);
             animation: fadeUp 1s var(--ease-out) 1s forwards;
+            width: 100%;
+            max-width: 1600px;
+            padding: 0 var(--space-48);
         }
 
         .gallery-item {
@@ -355,21 +349,23 @@
             position: relative;
             transition: transform var(--duration-slow) var(--ease-out);
             box-shadow: 0 20px 60px rgba(106, 59, 51, 0.1);
+            flex: 1;
+            min-width: 0;
         }
 
-        .gallery-item:nth-child(1) { width: 120px; height: 170px; }
-        .gallery-item:nth-child(2) { width: 145px; height: 210px; transform: translateY(-20px); }
-        .gallery-item:nth-child(3) { width: 170px; height: 250px; transform: translateY(-40px); }
-        .gallery-item:nth-child(4) { width: 145px; height: 210px; transform: translateY(-20px); }
-        .gallery-item:nth-child(5) { width: 120px; height: 170px; }
+        .gallery-item:nth-child(1) { max-width: 260px; height: 280px; }
+        .gallery-item:nth-child(2) { max-width: 300px; height: 340px; transform: translateY(-25px); }
+        .gallery-item:nth-child(3) { max-width: 340px; height: 400px; transform: translateY(-50px); }
+        .gallery-item:nth-child(4) { max-width: 300px; height: 340px; transform: translateY(-25px); }
+        .gallery-item:nth-child(5) { max-width: 260px; height: 280px; }
 
         .gallery-item:hover {
             transform: translateY(-10px);
         }
 
         .gallery-item:nth-child(2):hover,
-        .gallery-item:nth-child(4):hover { transform: translateY(-30px); }
-        .gallery-item:nth-child(3):hover { transform: translateY(-50px); }
+        .gallery-item:nth-child(4):hover { transform: translateY(-35px); }
+        .gallery-item:nth-child(3):hover { transform: translateY(-60px); }
 
         .gallery-item img {
             width: 100%;
@@ -1990,12 +1986,13 @@
             .hero-gallery {
                 flex-wrap: wrap;
                 gap: var(--space-12);
+                padding: 0 var(--space-16);
             }
             
-            .gallery-item { margin-bottom: 0 !important; transform: none !important; }
-            .gallery-item:nth-child(1), .gallery-item:nth-child(5) { width: 80px; height: 110px; }
-            .gallery-item:nth-child(2), .gallery-item:nth-child(4) { width: 95px; height: 135px; }
-            .gallery-item:nth-child(3) { width: 110px; height: 160px; }
+            .gallery-item { margin-bottom: 0 !important; transform: none !important; flex: 0 0 auto; }
+            .gallery-item:nth-child(1), .gallery-item:nth-child(5) { width: 80px; height: 110px; max-width: none; }
+            .gallery-item:nth-child(2), .gallery-item:nth-child(4) { width: 100px; height: 140px; max-width: none; }
+            .gallery-item:nth-child(3) { width: 120px; height: 170px; max-width: none; }
         }
 
         @media (max-width: 640px) {
@@ -2727,13 +2724,8 @@
             observer.observe(el);
         });
 
-        // Navigation scroll effect
-        const nav = document.getElementById('nav');
-        window.addEventListener('scroll', () => {
-            nav.classList.toggle('scrolled', window.scrollY > 60);
-        }, { passive: true });
-
         // Hamburger menu toggle
+        const nav = document.getElementById('nav');
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
 
