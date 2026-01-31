@@ -884,6 +884,77 @@
             transition: transform var(--duration-normal) var(--ease-out);
         }
 
+        .package-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transform: scale(0.5) rotateX(90deg);
+            transform-origin: center bottom;
+            transition: all var(--duration-slow) var(--ease-out);
+            z-index: 0;
+            border-radius: 20px;
+        }
+
+        .package-card:nth-child(1)::after {
+            background: linear-gradient(rgba(106, 59, 51, 0.85), rgba(106, 59, 51, 0.9)), url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=800&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .package-card:nth-child(2)::after {
+            background: linear-gradient(rgba(106, 59, 51, 0.85), rgba(106, 59, 51, 0.9)), url('https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&h=800&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .package-card:nth-child(3)::after {
+            background: linear-gradient(rgba(106, 59, 51, 0.85), rgba(106, 59, 51, 0.9)), url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&h=800&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .package-card:nth-child(4)::after {
+            background: linear-gradient(rgba(106, 59, 51, 0.85), rgba(106, 59, 51, 0.9)), url('https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&h=800&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .package-card:hover::after {
+            opacity: 1;
+            transform: scale(1) rotateX(0deg);
+        }
+
+        .package-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .package-card:hover .package-name,
+        .package-card:hover .package-amount,
+        .package-card:hover .package-period,
+        .package-card:hover .package-desc,
+        .package-card:hover .package-features li {
+            color: var(--white);
+        }
+
+        .package-card:hover .package-features li::before {
+            color: var(--white);
+        }
+
+        .package-card:hover .package-btn {
+            border-color: var(--white);
+            color: var(--white);
+            background: transparent;
+        }
+
+        .package-card:hover .package-btn:hover {
+            background: var(--white);
+            color: var(--terracotta);
+        }
+
         .package-card:hover::before {
             transform: scaleX(1);
         }
@@ -895,17 +966,17 @@
         }
 
         .package-card.featured {
-            background: var(--terracotta);
-            border-color: var(--terracotta);
+            background: var(--white);
+            border-color: var(--border-light);
         }
 
         .package-card.featured::before {
-            background: var(--rose-light);
-            transform: scaleX(1);
+            background: var(--rose);
+            transform: scaleX(0);
         }
 
         .package-card.featured:hover {
-            box-shadow: 0 30px 60px rgba(106, 59, 51, 0.25);
+            box-shadow: 0 30px 60px rgba(106, 59, 51, 0.08);
         }
 
         .package-header {
@@ -923,7 +994,7 @@
         }
 
         .package-card.featured .package-name {
-            color: var(--cream);
+            color: var(--terracotta);
         }
 
         .package-price {
@@ -938,7 +1009,7 @@
         }
 
         .package-card.featured .package-amount {
-            color: var(--cream);
+            color: var(--charcoal);
         }
 
         .package-period {
@@ -947,7 +1018,7 @@
         }
 
         .package-card.featured .package-period {
-            color: rgba(250, 247, 244, 0.6);
+            color: var(--text-light);
         }
 
         .package-desc {
@@ -960,8 +1031,8 @@
         }
 
         .package-card.featured .package-desc {
-            color: rgba(250, 247, 244, 0.7);
-            border-color: rgba(255,255,255,0.1);
+            color: var(--text-medium);
+            border-color: var(--border-light);
         }
 
         .package-features {
@@ -980,7 +1051,7 @@
         }
 
         .package-card.featured .package-features li {
-            color: rgba(250, 247, 244, 0.8);
+            color: var(--text-medium);
         }
 
         .package-features li::before {
@@ -1011,12 +1082,36 @@
         }
 
         .package-card.featured .package-btn {
-            border-color: var(--cream);
-            color: var(--cream);
+            border-color: var(--terracotta);
+            color: var(--terracotta);
         }
 
         .package-card.featured .package-btn:hover {
-            background: var(--cream);
+            background: var(--terracotta);
+            color: var(--cream);
+        }
+
+        /* Featured card hover overrides */
+        .package-card.featured:hover .package-name,
+        .package-card.featured:hover .package-amount,
+        .package-card.featured:hover .package-period,
+        .package-card.featured:hover .package-desc,
+        .package-card.featured:hover .package-features li {
+            color: var(--white);
+        }
+
+        .package-card.featured:hover .package-features li::before {
+            color: var(--white);
+        }
+
+        .package-card.featured:hover .package-btn {
+            border-color: var(--white);
+            color: var(--white);
+            background: transparent;
+        }
+
+        .package-card.featured:hover .package-btn:hover {
+            background: var(--white);
             color: var(--terracotta);
         }
 
