@@ -679,31 +679,32 @@
             width: 100%;
             padding: var(--space-16);
             margin-top: var(--space-32);
-            border: 1px solid var(--border-medium);
+            border: 1px solid var(--terracotta);
             border-radius: 8px;
             font-size: 13px;
             font-weight: 500;
             letter-spacing: 0.05em;
-            color: var(--text-medium);
-            background: transparent;
+            color: var(--cream);
+            background: var(--terracotta);
             transition: all var(--duration-normal) var(--ease-out);
         }
 
         .treatment-btn:hover {
-            background: var(--terracotta);
-            border-color: var(--terracotta);
-            color: var(--cream);
+            background: transparent;
+            border-color: var(--border-medium);
+            color: var(--text-medium);
         }
 
         .treatment-card.featured .treatment-btn {
-            border-color: rgba(255,255,255,0.2);
-            color: var(--cream);
-        }
-
-        .treatment-card.featured .treatment-btn:hover {
             background: var(--cream);
             border-color: var(--cream);
             color: var(--terracotta);
+        }
+
+        .treatment-card.featured .treatment-btn:hover {
+            background: transparent;
+            border-color: rgba(255,255,255,0.2);
+            color: var(--cream);
         }
 
         .treatment-price-section {
