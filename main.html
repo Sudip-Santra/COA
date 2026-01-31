@@ -1208,6 +1208,10 @@
             background: var(--cream-warm);
         }
 
+        .testimonials .section-header {
+            margin-bottom: var(--space-48);
+        }
+
         .testimonials-container {
             max-width: 900px;
             margin: 0 auto;
@@ -1265,6 +1269,44 @@
             color: var(--rose);
         }
 
+        .testimonial-stars {
+            display: flex;
+            gap: 4px;
+    margin-bottom: var(--space-16);
+    justify-content: center;
+}
+
+.testimonial-star {
+    font-size: 22px;
+    color: var(--rose);
+    line-height: 1;
+}
+
+.testimonial-star.empty {
+    color: var(--border-light);
+}
+
+.testimonial-star.half {
+    color: var(--border-light);
+    position: relative;
+}
+
+.testimonial-star.half::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--rose);
+    overflow: hidden;
+    width: 50%;
+            content: '★';
+            position: absolute;
+            left: 0;
+            width: 50%;
+            overflow: hidden;
+            color: var(--rose);
+        }
+
         .testimonial-nav {
             display: flex;
             justify-content: center;
@@ -1296,8 +1338,8 @@
            DUAL MARQUEE - CROSS SCROLLING
            ============================================ */
         .dual-marquee {
-            background: var(--cream-warm);
-            padding: var(--space-48) 0;
+            background: var(--cream);
+            padding: var(--space-120) 0;
             overflow: hidden;
             position: relative;
         }
@@ -1398,7 +1440,7 @@
            CONTACT - REDESIGNED
            ============================================ */
         .contact {
-            background: var(--cream);
+            background: var(--cream-warm);
             position: relative;
             overflow: hidden;
         }
@@ -2263,6 +2305,13 @@
             <div class="testimonials-container">
                 <div class="testimonial-slider">
                     <div class="testimonial-slide active">
+                        <div class="testimonial-stars">
+                            <span class="testimonial-star">★</span>
+                            <span class="testimonial-star">★</span>
+                            <span class="testimonial-star">★</span>
+                            <span class="testimonial-star">★</span>
+                            <span class="testimonial-star">★</span>
+                        </div>
                         <p class="testimonial-quote">"After just 3 months on the PERFORM package, I have more energy than I did in my 20s. The NAD+ therapy is like hitting a reset button on your entire system."</p>
                         <div class="testimonial-author">
                             <span class="testimonial-name">Rajesh M.</span>
@@ -2270,6 +2319,13 @@
                         </div>
                     </div>
                     <div class="testimonial-slide">
+                        <div class="testimonial-stars">
+                            <span class="testimonial-star">★</span>
+                            <span class="testimonial-star">★</span>
+                            <span class="testimonial-star">★</span>
+                            <span class="testimonial-star">★</span>
+                            <span class="testimonial-star">★</span>
+                        </div>
                         <p class="testimonial-quote">"COA's combination of IV therapy, massage, and functional nutrition has cut my recovery time in half. I'm hitting PRs I thought were impossible at 38."</p>
                         <div class="testimonial-author">
                             <span class="testimonial-name">Priya S.</span>
@@ -2277,6 +2333,13 @@
                         </div>
                     </div>
                     <div class="testimonial-slide">
+                        <div class="testimonial-stars">
+                            <span class="testimonial-star">★</span>
+                            <span class="testimonial-star">★</span>
+                            <span class="testimonial-star">★</span>
+                            <span class="testimonial-star">★</span>
+                            <span class="testimonial-star half">☆</span>
+                        </div>
                         <p class="testimonial-quote">"My biological age dropped 7 years in 6 months. My skin looks better than it did at 40. This isn't anti-aging—it's age optimization."</p>
                         <div class="testimonial-author">
                             <span class="testimonial-name">Kavita R.</span>
@@ -2284,6 +2347,13 @@
                         </div>
                     </div>
                     <div class="testimonial-slide">
+                        <div class="testimonial-stars">
+                            <span class="testimonial-star">★</span>
+                            <span class="testimonial-star">★</span>
+                            <span class="testimonial-star">★</span>
+                            <span class="testimonial-star">★</span>
+                            <span class="testimonial-star empty">☆</span>
+                        </div>
                         <p class="testimonial-quote">"It's like Soho House meets a longevity clinic. The blood panels revealed exactly what my body needed. I'm completely obsessed."</p>
                         <div class="testimonial-author">
                             <span class="testimonial-name">Vikram D.</span>
