@@ -302,15 +302,18 @@
         .hero-cta {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: var(--space-12);
             background: var(--terracotta);
             color: var(--cream);
             padding: var(--space-16) var(--space-32);
+            border: 1px solid var(--terracotta);
             border-radius: 100px;
             font-size: 13px;
             font-weight: 500;
             letter-spacing: 0.1em;
             text-transform: uppercase;
+            line-height: 1;
             transition: all var(--duration-normal) var(--ease-out);
             opacity: 0;
             transform: translateY(20px);
@@ -318,9 +321,10 @@
         }
 
         .hero-cta:hover {
-            background: var(--charcoal);
+            background: transparent;
+            color: var(--terracotta);
+            border-color: var(--terracotta);
             transform: translateY(-2px);
-            box-shadow: 0 20px 40px rgba(106, 59, 51, 0.2);
         }
 
         .hero-cta svg {
@@ -1903,9 +1907,6 @@
             <p class="hero-desc">Your sanctuary for transformation, optimization, and timeless vitality. Experience precision wellness backed by science.</p>
             <a href="#contact" class="hero-cta">
                 Book Consultation
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 5v14M5 12h14"/>
-                </svg>
             </a>
         </div>
         <div class="hero-gallery">
